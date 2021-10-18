@@ -6,7 +6,7 @@ class StringCalculator {
 
 	public int add(String input) {
 
-		String[] str = input.split("\n,");
+		String[] str = input.split("\n,|");
 
 		if (input.isEmpty()) {
 			return 0;
@@ -20,26 +20,28 @@ class StringCalculator {
 		return stringToInt(input);
 	}
 
+	
 	// sum ==================
 
 	private int getSum(String[] numbers) {
 		int sum = 0;
-		for (String currentNumber : numbers) {
-			if (stringToInt(currentNumber) > 1000) {
+		for (String curr : numbers) {
+			if (stringToInt(curr) > 1000) {
 				continue;
 			}
-			sum += stringToInt(currentNumber);
+			sum += stringToInt(curr);
 		}
 		return sum;
 	}
-
+	
+	// String to int 
 	private int stringToInt(String number) {
 		int n=Integer.parseInt(number);
 		if(n < 0) {
 			throw new IllegalArgumentException("Negative input not allowed");
 		}
 		else
-			return Integer.parseInt(number);
+			return n;
 
 	}
 
