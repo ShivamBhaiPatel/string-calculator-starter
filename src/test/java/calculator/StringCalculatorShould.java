@@ -41,5 +41,24 @@ public class StringCalculatorShould {
         assertEquals(calculator.add("1\n2"), 3);
         assertEquals(calculator.add("11\n13"), 24);
     }
+    @Test
+    public void threeNumberWithDelimiter() {
+        assertEquals(calculator.add("1,2,3"), 6);
+        assertEquals(calculator.add("5\n2\n3"), 10);
+    }
+
+    @Test
+    public void negativeInputReturnsException() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Negative input not allowed");
+        calculator.add("-10");
+        calculator.add("-8,12\n-105");
+    }
+
+    @Test
+    public void ignoreNumberGreaterThan1000() {
+        assertEquals(calculator.add("1,2,1001"), 17);
+        assertEquals(calculator.add("8374,22\n4,1524"), 26);
+    }
 
 }

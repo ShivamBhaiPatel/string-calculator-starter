@@ -26,6 +26,7 @@ class StringCalculator {
 	private int getSum(String[] numbers) {
 		int sum = 0;
 		for (String curr : numbers) {
+			//for ignoring numbers greater than 1000
 			if (stringToInt(curr) > 1000) {
 				continue;
 			}
