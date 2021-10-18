@@ -8,15 +8,17 @@ class StringCalculator {
         for(int i=0; i<arr.length;i++){
             arr[i]=Integer.parseInt(str[i]);
         }
+        int sum=0;
         if(input.length()==0){
             return 0;
         }
         if(arr.length==1){
-            return arr[0];
+            sum=  arr[0];
         }
-        else{
-            return arr[0]+arr[1];
+        else if(arr.length==2){
+            sum=  arr[0]+arr[1];
         }
+        return sum;
     }
 
 }
