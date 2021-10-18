@@ -34,7 +34,12 @@ class StringCalculator {
 	}
 
 	private int stringToInt(String number) {
-		return Integer.parseInt(number);
+		int n=Integer.parseInt(number);
+		if(n < 0) {
+			throw new IllegalArgumentException("Negative input not allowed");
+		}
+		else
+			return Integer.parseInt(number);
 
 	}
 
