@@ -55,10 +55,6 @@ public class StringCalculatorShould {
         calculator.add("-8,12\n-105");
     }
 
-    @Test
-    public void ignoreNumberGreaterThan1000() {
-        assertEquals(calculator.add("1,2,1001"), 17);
-        assertEquals(calculator.add("8374,22\n4,1524"), 26);
-    }
+
 
 }
